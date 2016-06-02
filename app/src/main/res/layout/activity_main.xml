@@ -23,4 +23,11 @@
        android:padding="10dp"
        android:gravity="right"
        android:text="文字显示位置"/>
+      <EditText
+          android:id="@+id/edit_settext"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="在代码中设置文字"/>
+
+
 </LinearLayout>

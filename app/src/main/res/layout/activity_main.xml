@@ -28,6 +28,9 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:hint="在代码中设置文字"/>
-
-
+   <Button
+       android:id="@+id/bottom_dialog"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="从底部弹出弹窗"/>
 </LinearLayout>

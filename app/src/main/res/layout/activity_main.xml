@@ -33,4 +33,9 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="从底部弹出弹窗"/>
+   <Button
+       android:id="@+id/self_dialog"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="自定义弹窗"/>
 </LinearLayout>

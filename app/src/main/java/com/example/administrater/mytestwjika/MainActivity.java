@@ -1,6 +1,5 @@
 package com.example.administrater.mytestwjika;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -12,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -20,6 +20,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private TextView mTextViewLoca;//在代码中改变textview中文字的位置gravity
 	private EditText mEditSetWords;//在代码中给输入框设置文字
 	private Button mButtonDialog;//从底部弹出弹窗
+	private Button mButtonSelfDia;//自定义dialog
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		mTextViewLoca.setOnClickListener(this);
 		mButtonDialog = (Button) findViewById(R.id.bottom_dialog);
 		mButtonDialog.setOnClickListener(this);
+		mButtonSelfDia = (Button) findViewById(R.id.self_dialog);
+		mButtonSelfDia.setOnClickListener(this);
 	}
 
 	private void setEditText() {
@@ -66,6 +69,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				wl.height = ViewGroup.LayoutParams.WRAP_CONTENT;
 				dialog.onWindowAttributesChanged(wl);
 				dialog.show();
+				break;
+			case R.id.self_dialog:
+				Dialog dialog1 = new Dialog(this,R.style.dialog);
+				dialog1.setContentView(R.layout.self_dialog);
+				Window window1 = dialog1.getWindow();
+				window1.setGravity(Gravity.CENTER);
+				WindowManager.LayoutParams wl1 = window1.getAttributes();
+				// 以下这两句是为了保证按钮可以水平满屏
+				wl1.width = ViewGroup.LayoutParams.MATCH_PARENT;
+				wl1.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+				dialog1.onWindowAttributesChanged(wl1);
+				dialog1.show();
 				break;
 			default:
 				break;

@@ -15,7 +15,7 @@
             android:gravity="center"
             android:textSize="16sp"
             android:padding="10dp"
-            android:text="拍  照"/>
+            android:text="安全问题找回"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
@@ -26,13 +26,13 @@
             android:gravity="center"
             android:textSize="16sp"
             android:padding="10dp"
-            android:text="相  册"/>
+            android:text="账号申诉找回"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:background="@drawable/round_react_white"
         android:textSize="16sp"

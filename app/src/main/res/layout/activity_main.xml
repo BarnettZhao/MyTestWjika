@@ -38,4 +38,14 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="自定义弹窗"/>
+   <Button
+       android:id="@+id/button_location"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="获取定位服务是否开启"/>
+   <Button
+       android:id="@+id/button_notification"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="获取通知服务是否开启"/>
 </LinearLayout>

@@ -7,11 +7,14 @@ import android.app.NotificationManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -23,6 +26,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -33,6 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private Button mButtonSelfDia;//自定义dialog
 	private Button mButtonLocation;//判断定位服务是否开启
 	private Button mButtonNotification;//判断是否开启通知服务
+	private Button mButtonSetString;//设置不同语言
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +61,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		mButtonLocation.setOnClickListener(this);
 		mButtonNotification = (Button) findViewById(R.id.button_notification);
 		mButtonNotification.setOnClickListener(this);
+		mButtonSetString = (Button) findViewById(R.id.button_set_string);
+		mButtonSetString.setOnClickListener(this);
 	}
 
 	private void setEditText() {
@@ -97,6 +105,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 					Log.e("notification","false");
 				}
 				Log.e("notification",isEnabled()+"");
+				break;
+			case R.id.button_set_string:
+				switchLanguage(Locale.ENGLISH);
+				finish();
+				startActivity(new Intent(this,MainActivity.class));
 				break;
 			default:
 				break;
@@ -146,5 +159,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		wl1.height = ViewGroup.LayoutParams.WRAP_CONTENT;
 		dialog1.onWindowAttributesChanged(wl1);
 		dialog1.show();
+	}
+
+	public void switchLanguage(Locale locale) {
+		Configuration config = getResources().getConfiguration();// 获得设置对象
+		Resources resources = getResources();// 获得res资源对象
+		DisplayMetrics dm = resources.getDisplayMetrics();// 获得屏幕参数：主要是分辨率，像素等。
+		config.locale = locale; // 简体中文
+		resources.updateConfiguration(config, dm);
 	}
 }

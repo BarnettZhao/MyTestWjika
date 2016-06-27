@@ -48,4 +48,9 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="获取通知服务是否开启"/>
+   <Button
+       android:id="@+id/button_set_string"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/test_content"/>
 </LinearLayout>

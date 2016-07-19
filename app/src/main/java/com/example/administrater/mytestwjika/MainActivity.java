@@ -40,6 +40,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private Button mButtonNotification;//判断是否开启通知服务
 	private Button mButtonSetString;//设置不同语言
 	private Button mButtonViewpager;//viewpager
+	private Button mButtonClearEdit;//可删除的输入框
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		mButtonSetString.setOnClickListener(this);
 		mButtonViewpager = (Button) findViewById(R.id.button_viewpager);
 		mButtonViewpager.setOnClickListener(this);
+		mButtonClearEdit = (Button) findViewById(R.id.button_clearedit);
+		mButtonClearEdit.setOnClickListener(this);
 	}
 
 	private void setEditText() {
@@ -116,6 +119,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.button_viewpager:
 				startActivity(new Intent(this,ViewpagerActivity.class));
+				break;
+			case R.id.button_clearedit:
+				startActivity(new Intent(this,ClearEditActivity.class));
 				break;
 			default:
 				break;

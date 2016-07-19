@@ -28,6 +28,7 @@
 
             />
         <activity android:name=".ViewpagerActivity"/>
+        <activity android:name=".ClearEditActivity"/>
     </application>
 
 </manifest>

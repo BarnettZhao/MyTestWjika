@@ -48,17 +48,21 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="获取通知服务是否开启"/>
+   <com.example.administrater.mytestwjika.ClearEditText
+       android:id="@+id/self_cancel_dialog"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:background="@drawable/round_react_white"
+       android:paddingRight="12dp"
+       android:drawableRight="@drawable/card_invite_close"/>
    <Button
        android:id="@+id/button_set_string"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="@string/test_content"/>
-   <com.example.administrater.mytestwjika.ClearEditText
-       android:id="@+id/self_cancel_dialog"
+   <Button
+       android:id="@+id/button_viewpager"
        android:layout_width="match_parent"
-       android:layout_height="40dp"
-       android:layout_marginTop="50dp"
-       android:background="@drawable/round_react_white"
-       android:paddingRight="12dp"
-       android:drawableRight="@drawable/card_invite_close"/>
+       android:layout_height="wrap_content"
+       android:text="viewpager"/>
 </LinearLayout>

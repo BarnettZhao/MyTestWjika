@@ -13,15 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
-            android:configChanges="locale">
+            android:configChanges="locale"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
 
-        <activity android:name=".GetPermission"/>
+        </activity>
+<!--        android:windowSoftInputMode="adjustPan"   键盘就会覆盖屏幕
+        android:windowSoftInputMode="stateVisible|adjustResize"   屏幕整体上移-->
+        <activity android:name=".GetPermission"
+
+            />
+        <activity android:name=".ViewpagerActivity"/>
     </application>
 
 </manifest>

@@ -39,6 +39,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private Button mButtonLocation;//判断定位服务是否开启
 	private Button mButtonNotification;//判断是否开启通知服务
 	private Button mButtonSetString;//设置不同语言
+	private Button mButtonViewpager;//viewpager
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		mButtonNotification.setOnClickListener(this);
 		mButtonSetString = (Button) findViewById(R.id.button_set_string);
 		mButtonSetString.setOnClickListener(this);
+		mButtonViewpager = (Button) findViewById(R.id.button_viewpager);
+		mButtonViewpager.setOnClickListener(this);
 	}
 
 	private void setEditText() {
@@ -110,6 +113,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				switchLanguage(Locale.ENGLISH);
 				finish();
 				startActivity(new Intent(this,MainActivity.class));
+				break;
+			case R.id.button_viewpager:
+				startActivity(new Intent(this,ViewpagerActivity.class));
 				break;
 			default:
 				break;
